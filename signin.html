@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    <link href="./css/sigin.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <a class="logo"><img src="./img/logo.png" alt=""></a>
+    <div class="main">
+        <p class="title">Đăng nhập tài khoản của bạn </p>
+        <div class="form">
+            <form class="form-sigin">
+                <div class="form-input username">
+                    <input type="text" placeholder="Username" required class="form-control username--input">
+                    <label class="message"></label>
+                    <!-- fas fa-times-circle email__icon-error là  lỗi fas fa-check-circle là thanh cong -->
+                    <i class="fas fa-times-circle input__icon"></i>
+                    <i class="fas fa-check-circle input__icon"></i>
+                </div>
+                <div class="form-input password">
+                    <input type="password" placeholder="Password" required class="form-control password--input">
+                    <label class="message"></label>
+                    <!-- fas fa-times-circle email__icon-error là  lỗi fas fa-check-circle là thanh cong -->
+                    <i class="fas fa-times-circle input__icon"></i>
+                    <i class="fas fa-check-circle input__icon"></i>
+                </div>
+                <input class="submit-btn" disabled type="submit" value="Sign In">
+                <div class="acc"><a href="registration.html">Bạn chưa có tài khoản ??  </a></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/signin.js"></script>
+</body>
+
+</html>

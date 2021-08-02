@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style-registration.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./css/themify-icons.css">
+    <!-- <script src="js/main.js"></script> -->
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="background"></div>
+        <div class="container">
+            <div class="logo">
+                <a href="getstart.html"><img src="./img/logo.png" alt=""></a>
+            </div>
+            <div class="register">
+                <div class="title">
+                    <p class="title__name">Tạo một tài khoản miễn phí </p>
+                    <p class="title__description"> Miễn phí mãi mãi không cần thanh toán</p>
+                </div>
+                <form class="form-register">
+                    <!-- invalid and valid -->
+                    <div class="form-input email">
+                        <input id="email" placeholder="Email" class="form-control email--input">
+                        <label class="message"></label>
+                        <!-- fas fa-times-circle là  lỗi fas fa-check-circle là thanh cong -->
+                        <i class="fas fa-times-circle input__icon"></i>
+                        <i class="fas fa-check-circle input__icon"></i>
+                    </div>
+                    <div class="form-input username username--invalid">
+                        <input type="text" placeholder="Username" class="form-control username--input">
+                        <label class="message"></label>
+                        <!-- fas fa-times-circle email__icon-error là  lỗi fas fa-check-circle là thanh cong -->
+                        <i class="fas fa-times-circle input__icon"></i>
+                        <i class="fas fa-check-circle input__icon"></i>
+                    </div>
+                    <div class="form-input password password--invalid">
+                        <input type="password" placeholder="Password" class="form-control password--input">
+                        <label class="message"></label>
+                        <!-- fas fa-times-circle email__icon-error là  lỗi fas fa-check-circle là thanh cong -->
+                        <i class="fas fa-times-circle input__icon"></i>
+                        <i class="fas fa-check-circle input__icon"></i>
+                    </div>
+                    <!-- <form action="#"> -->
+                    <input type="checkbox" id="myCheck" class="myCheck">
+                    <label for="myCheck">Bạn đồng ý với Các điều khoản điều kiện và chính sách bảo mật</label> <br>
+                    <input id="check-btn" disabled class="submit-btn" type="submit" value="Sign Up">
+                    <!-- </form> -->
+
+                    <div class="acc"><a href="signin.html">Bạn đã có tài khoản ??  </a></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

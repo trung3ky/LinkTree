@@ -1,0 +1,247 @@
+/* reset css */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Karla, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}
+
+.main {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    order: 1;
+    padding: 0 24px;
+    max-width: calc(100% - 32%);
+    width: 100%;
+    max-height: 100vh;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.background {
+    order: 2;
+    /* display: none; */
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    max-width: 32%;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/bg_register.png");
+    background-size: cover;
+    background-position: center;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo {
+    position: absolute;
+    top: 24px;
+    left: 48px;
+    letter-spacing: 7px;
+    font-size: 20px;
+    color: #F5B800;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-top: 120px;
+    max-width: 640px;
+    width: 100%;
+}
+
+.title__name {
+    width: 100%;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.title__description {
+    font-size: 15px;
+    padding-top: 10px;
+    color: #131415;
+}
+
+.form-register {
+    max-width: 640px;
+    width: 100%;
+}
+
+.form-input:first-child {
+    margin-top: 96px;
+}
+
+.form-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    max-width: 640px;
+    width: 100%;
+}
+
+:not(.invalid).fa-times-circle {
+    display: none;
+}
+
+.invalid .fa-times-circle {
+    display: block;
+    color: #FF1731;
+}
+
+:not(.valid).fa-check-circle {
+    display: none;
+}
+
+.valid .fa-check-circle {
+    display: block;
+    color: #00D775;
+}
+
+.input__icon {
+    position: absolute;
+    top: 24px;
+    right: 12px;
+    display: none;
+}
+
+.invalid .form-control {
+    border: solid 2px #FF1731;
+}
+
+.invalid .message {
+    color: #FF1731;
+    padding-top: 6px;
+    font-size: 12px;
+    margin-left: 0;
+}
+
+.form-input>input {
+    outline: none;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 13px;
+    border: none;
+    background-color: #F5F6F8
+}
+
+.form-signin {}
+
+label {
+    margin-left: 10px;
+}
+
+.myCheck {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    border: 1px solid red;
+}
+
+#myCheck:hover {}
+
+.submit-btn {
+    margin-top: 30px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #DADEE0;
+    height: 50px;
+    color: #A6A6A6;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    font-size: 16 px;
+}
+
+.submit-btn {
+    /* background-color: #7551E9; */
+}
+
+.submit-btn:not([disabled]) {
+    background-color: #7551E9;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-btn:not([disabled]):hover {
+    background-color: #6344C6;
+}
+
+.acc {
+    padding: 16px 0;
+    border-top: solid 1px #DADEE0;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.acc a {
+    text-decoration: none;
+    color: #131415;
+    font-size: 14px;
+}
+
+.acc a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width:576px) {
+    .main {
+        flex-direction: column;
+        height: auto;
+    }
+    .logo {
+        left: 50%;
+        transform: translateX(-50%)
+    }
+    .background {
+        order: 1;
+        max-width: 100%;
+        height: 0;
+        padding-top: 50%;
+    }
+    .container {
+        order: 2;
+        max-width: 100%;
+        overflow: auto;
+    }
+    .title {
+        margin-top: 30px;
+    }
+    .form-input:first-child {
+        margin-top: 40px;
+    }
+    .acc {
+        border: none;
+        margin-top: 50px;
+    }
+}

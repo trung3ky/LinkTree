@@ -157,10 +157,9 @@ function deleted(element, nameclass) {
 var addBtnElement = document.querySelector('.create-link__btn')
 
 addBtnElement.onclick = function() {
-    var time = new Date
-    var name = "name" + time.getMilliseconds()
-    $('.list__add').prepend(`
-    <div class="item-link item-link-${name}">
+    var time = new Date;
+    var name = "name" + time.getMilliseconds();
+    $('.list__add').prepend(`<div class="item-link item-link-${name}">
     <div class="item__content">
         <div class="item-link__left">
             <i class="fas fa-ellipsis-v"></i>

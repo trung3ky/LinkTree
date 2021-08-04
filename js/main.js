@@ -1,18 +1,37 @@
+var isLogin = JSON.parse(localStorage.getItem("ISLOGIN"))
 var data = JSON.parse(localStorage.getItem("USER"))
 
-if (data == null) {
+if (isLogin == null) {
     alert("Vui lòng đăng nhập trước")
     window.location = './signin.html'
 }
 
-var name = "@" + data.user;
+var logout = document.querySelector('.logout')
+logout.onclick = function(e) {
+    e.preventDefault()
+    localStorage.setItem("ISLOGIN", JSON.stringify(null));
+    window.location = './signin.html'
+
+}
+
+var name = data.user;
 var phoneNameElement = document.querySelector('.phone__user')
 var userNameElement = document.querySelector('.sub-user__tree-name')
+var titleNameElement = document.querySelector('.sub-user__title')
 
-phoneNameElement.innerHTML = name;
-userNameElement.innerHTML = name;
+
+phoneNameElement.innerHTML = "@" + name;
+userNameElement.innerHTML = "@" + name;
+titleNameElement.innerHTML = name;
 
 var sharebtnElement = document.querySelector('.nav-right__share-btn')
+var menuElement = document.querySelector('.heder-bottom__user--icon')
+
+
+// var body = document.querySelector('body:not(.nav-right__share-btn)')
+// body.onclick = function() {
+//     console.log(body)
+// }
 
 var check = true
 sharebtnElement.onclick = function() {
@@ -25,6 +44,20 @@ sharebtnElement.onclick = function() {
         check = true
     }
 }
+var checkMenu = true
+menuElement.onclick = function() {
+    console.log(check)
+    var listElement = document.querySelector('.sub-user')
+    if (checkMenu) {
+        listElement.style.display = 'block'
+        checkMenu = false
+    } else {
+        listElement.style.display = 'none'
+        checkMenu = true
+    }
+}
+
+
 
 function editText(editElement, nameclass, url) {
     var element = editElement.parentElement.parentElement.parentElement.lastElementChild
@@ -197,3 +230,23 @@ addBtnElement.onclick = function() {
 </div>
     `)
 }
+
+
+
+
+
+// Appearance 
+
+var tabElements = document.querySelectorAll('.list__item');
+var contentTabs = document.querySelectorAll('.content--tab')
+
+tabElements.forEach(function(tab, index) {
+    var contentTab = contentTabs[index]
+    tab.onclick = function() {
+        document.querySelector('.list__item.list__item-active').classList.remove('list__item-active');
+        document.querySelector('.content--tab.active').classList.remove('active');
+
+        this.classList.add('list__item-active')
+        contentTab.classList.add('active')
+    }
+})

@@ -52,7 +52,7 @@ function Validator(options) {
         var user = document.querySelector('.username--input').value
         var password = document.querySelector('.password--input').value
         localStorage.setItem("USER", JSON.stringify({ email: email, user: user, password: password }))
-        formElement.action = "index.html"
+        formElement.action = "signin.html"
     }
 
     options.rules.forEach(function(rule) {

@@ -27,14 +27,15 @@
                 <i class="fas fa-volume-up"></i>
             </div>
             <div class="heder-bottom__user">
-                <a href="./index.html">
+                <a class="heder-bottom__user-image-link" href="./index.html">
                     <img class="heder-bottom__user-image" src="https://assets.production.linktr.ee/8588826fa05a10c9f86af7eaa9db6a6bf7046e20/images/default_profile_picture.png" alt="user">
                 </a>
+                <i class="fas fa-bars heder-bottom__user--icon"></i>
                 <div class="sub-user">
-                    <div class="sub-user__title">Trunghuynh</div>
+                    <div class="sub-user__title"></div>
                     <ul class="sub-user__list">
                         <a href="#" class="nav__item sub-user__list-item">My Account</a>
-                        <a href="./signin.html" class="nav__item sub-user__list-item">Logout</a>
+                        <a href="" class="nav__item sub-user__list-item logout">Logout</a>
                     </ul>
                     <div class="sub-user__title">Trees</div>
                     <a href="./index.html" class="sub-user__tree">
@@ -46,13 +47,13 @@
         </div>
     </div>
     <div class="app">
-        <nav>
+        <nav class="navbar__menu">
             <div class="nav">
                 <div class="nav-left">
                     <ul class="list">
-                        <li class="list__item list__item-active"><a class="list__item-link" href="#">Links</a></li>
-                        <li class="list__item"><a class="list__item-link" href="#">Appearance</a></li>
-                        <li class="list__item"><a class="list__item-link" href="#">Settings</a></li>
+                        <li class="list__item list__item-active"><a class="list__item-link list__item-link-links" href="#">Links</a></li>
+                        <li class="list__item"><a class="list__item-link list__item-link-appearance" href="#">Appearance</a></li>
+                        <!-- <li class="list__item"><a class="list__item-link" href="#">Settings</a></li> -->
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -70,49 +71,57 @@
             </div>
         </nav>
         <div class="container">
-            <div class="create-link">
+            <div class="content--tab active">
                 <div class="create-link__btn">Add New Link</div>
-                <div class="list__add">
-
-                    <!-- <div class="item-link">
-                        <div class="item__content">
-                            <div class="item-link__left">
-                                <i class="fas fa-ellipsis-v"></i>
+                <div class="list__add"></div>
+            </div>
+            <div class="content--tab">
+                <div class="profile">
+                    <div class="profile__title">Profile</div>
+                    <div class="profile__info">
+                        <div class="info__image">
+                            <div class="info__image-img">
+                                <img src="https://assets.production.linktr.ee/8588826fa05a10c9f86af7eaa9db6a6bf7046e20/images/default_profile_picture.png" alt="">
+                                <div class="info__button">
+                                    <div class="button button--chose">Pick an images</div>
+                                    <div class="button button--remove">Remove</div>
+                                </div>
                             </div>
-                            <div class="content">
-                                <div class="content-info">
-                                    <div class="content-info__top">
-                                        <span class="content-info__title">Title <i class="fas fa-pen content-info__icon"></i></span>
-                                        <input class="content-info__input content-info__top-input" type="text">
-                                    </div>
-                                    <div class="content-info__bottom ">
-                                        <span class="content-info__url">Url <i class="fas fa-pen content-info__icon"></i></span>
-                                        <input class="content-info__input content-info__bottom-input" type="text">
-                                    </div>
-                                </div>
-                                <div class="message__error">Unsafe URL</div>
-                                <div class="content-list">
-                                    <i class="far fa-image content-list__icon"></i>
-                                    <i class="far fa-chart-bar content-list__icon"></i>
-                                    <i class="fas fa-trash-alt content-list__icon"></i>
-                                </div>
-                                <div class="item-link__button">
-                                    <div class="item-link__button-circle"></div>
-                                </div>
+                            <div class="info__title">
+                                <input class="infor__title-input" type="text">
+                                <div class="info__title-text active">Profile Title</div>
                             </div>
                         </div>
-                        <div class="delete">
-                            <div class="delete__title">Delete <i class="fas fa-times delete__icon"></i></div>
-                            <span class="delete__des">Delete this forever?</span>
-                            <div class="delete__btn">
-                                <div class="delete__btn-cancel delete-btn">Cancel</div>
-                                <div class="delete__btn-delete delete-btn">Delete</div>
-                            </div>
+                        <div class="info__description">
+                            <div class="info__description-title">Bio</div>
+                            <textarea class="info__description-input" placeholder="Enter a bio description to appear on your Linktree"></textarea>
+                            <div class="info__description-total">0/80</div>
                         </div>
-                    </div> -->
-
-
+                    </div>
                 </div>
+                <!-- <div class="Theme">
+                    <div class="profile__title">Profile</div>
+                    <div class="profile__info">
+                        <div class="info__image">
+                            <div class="info__image-img">
+                                <img src="https://assets.production.linktr.ee/8588826fa05a10c9f86af7eaa9db6a6bf7046e20/images/default_profile_picture.png" alt="">
+                                <div class="info__button">
+                                    <div class="button button--chose">Pick an images</div>
+                                    <div class="button button--remove">Remove</div>
+                                </div>
+                            </div>
+                            <div class="info__title">
+                                <input class="infor__title-input" type="text">
+                                <div class="info__title-text active">Profile Title</div>
+                            </div>
+                        </div>
+                        <div class="info__description">
+                            <div class="info__description-title">Bio</div>
+                            <textarea class="info__description-input" placeholder="Enter a bio description to appear on your Linktree"></textarea>
+                            <div class="info__description-total">0/80</div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div class="interface">
                 <div class="phone">

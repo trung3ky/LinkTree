@@ -106,7 +106,9 @@ Validator({
         btn = document.querySelector('.submit-btn')
         if (user.value.length > 0 && password.value.length > 0 &&
             !userParent && !passwordParent) {
+            localStorage.setItem("ISLOGIN", JSON.stringify(true))
             btn.disabled = false
+
         } else {
             btn.disabled = true
         }

@@ -250,3 +250,61 @@ tabElements.forEach(function(tab, index) {
         contentTab.classList.add('active')
     }
 })
+
+
+var file = [{
+        name: 'Linktree x Daniel Triendl',
+        link: 'theme1.png'
+    },
+    {
+        name: 'Linktree x Luke John Matthew Arnold',
+        link: 'theme2.png'
+    },
+    {
+        name: 'Leaf',
+        link: 'theme3.png'
+    },
+    {
+        name: 'Snow',
+        link: 'theme4.png'
+    },
+    {
+        name: 'Moon',
+        link: 'theme5.png'
+    },
+    {
+        name: 'Smoke',
+        link: 'theme6.png'
+    },
+    {
+        name: 'Noir',
+        link: 'theme7.png'
+    },
+    {
+        name: 'Mint',
+        link: 'theme8.png'
+    },
+    {
+        name: 'Miami',
+        link: 'theme9.png'
+    },
+    {
+        name: 'Bloom',
+        link: 'theme10.png'
+    },
+    {
+        name: 'Spray',
+        link: 'theme11.png'
+    }
+]
+var path = "./img/theme/"
+file.forEach(function(result, index) {
+    var image = path + result.link
+    console.log(image)
+    $('.theme__list').append(`
+        <div class="theme__item">
+        <div class="theme__image" style="background-image: url(${image})"></div>    
+        <span class="theme__name">${result.name}</span>
+        </div>
+    `)
+})

@@ -89,13 +89,17 @@
                             </div>
                             <div class="info__title">
                                 <input class="infor__title-input" type="text">
-                                <div class="info__title-text active">Profile Title</div>
+                                <div class="info__title-text">Profile Title</div>
                             </div>
                         </div>
                         <div class="info__description">
                             <div class="info__description-title">Bio</div>
                             <textarea class="info__description-input" placeholder="Enter a bio description to appear on your Linktree"></textarea>
-                            <div class="info__description-total">0/80</div>
+
+                            <div class="too__many">
+                                <div class="error__character">Too many characters</div>
+                                <div class="info__description-total">0/80</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -112,6 +116,7 @@
                     <div class="phone__load"></div>
                     <img class="phone_image" src="https://assets.production.linktr.ee/8588826fa05a10c9f86af7eaa9db6a6bf7046e20/images/default_profile_picture.png" alt="user" />
                     <span class="phone__user"></span>
+                    <span class="phone__user phone__user-des"></span>
                     <!-- <a class="phone__item" href="#">
                         <i class="fab fa-facebook-messenger phone__item-icon"></i>
                         <span class="phone__item-name">Facebook</span>

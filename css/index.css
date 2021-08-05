@@ -645,11 +645,18 @@ body {
 }
 
 .info__description-title,
-.info__description-total {
+.info__description-total,
+.error__character {
     font-size: 12px;
     font-weight: 500;
     color: #9C9FA3;
     width: 100%;
+    padding-bottom: 4px;
+}
+
+.too__many {
+    display: flex;
+    justify-content: space-around;
 }
 
 .info__description-input {
@@ -659,20 +666,44 @@ body {
     max-width: 100%;
     height: 94px;
     padding: 8px 12px;
+    border-radius: 4px;
 }
 
 .info__description-input:focus {
     border: 1px solid #ACB5BF;
 }
 
+.error .info__description-input {
+    border: 1px solid #FF1731;
+}
+
 .info__description-total {
     text-align: right;
+}
+
+.error__character {
+    display: none;
+    padding-left: 16px;
+    text-align: left;
+}
+
+.error .info__description-total {
+    color: #FF1731;
+}
+
+.error .error__character {
+    display: block;
+    color: #FF1731;
 }
 
 .theme__list {
     display: grid;
     grid-gap: 24px;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.theme__item {
+    cursor: pointer;
 }
 
 .theme__image {
@@ -684,6 +715,11 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     resize: both;
+}
+
+.theme__image.active {
+    border: 2px solid #AEAEAE;
+    box-shadow: 0.5px 0.5px 0.5px #AAA;
 }
 
 .theme__name {
@@ -721,6 +757,8 @@ body {
     border: solid 15px black;
     overflow: hidden;
     background-image: linear-gradient(180deg, #3AE09B, #A9F0CB);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .phone_image {
@@ -733,7 +771,13 @@ body {
 .phone__user {
     line-height: 24px;
     font-size: 13px;
+    font-weight: 500;
+}
+
+.phone__user-des {
+    font-size: 11px;
     margin-bottom: 32px;
+    text-align: center;
 }
 
 .phone__item {

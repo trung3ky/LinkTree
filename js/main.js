@@ -1,5 +1,8 @@
 var isLogin = JSON.parse(localStorage.getItem("ISLOGIN"))
 var data = JSON.parse(localStorage.getItem("USER"))
+var nameTile = JSON.parse(localStorage.getItem("NAME"))
+var description = JSON.parse(localStorage.getItem("DESCRIPTION"))
+var load = document.querySelector('.phone__load')
 
 if (isLogin == null) {
     alert("Vui lòng đăng nhập trước")
@@ -19,8 +22,12 @@ var phoneNameElement = document.querySelector('.phone__user')
 var userNameElement = document.querySelector('.sub-user__tree-name')
 var titleNameElement = document.querySelector('.sub-user__title')
 
+if (nameTile == null) {
+    phoneNameElement.innerHTML = "@" + name;
+} else {
+    phoneNameElement.innerHTML = nameTile;
+}
 
-phoneNameElement.innerHTML = "@" + name;
 userNameElement.innerHTML = "@" + name;
 titleNameElement.innerHTML = name;
 
@@ -135,7 +142,6 @@ function addItemPhone(element, url, title, nameclass) {
     if (element) {
         sattus = element.matches('.item-link__button--success')
     }
-    var load = document.querySelector('.phone__load')
     load.style.display = 'block'
     setTimeout(function() {
         load.style.display = 'none'
@@ -175,7 +181,7 @@ function closeDelete(element) {
 function deleted(element, nameclass) {
     var parentElement = element.offsetParent
     parentElement.remove()
-    var load = document.querySelector('.phone__load')
+
     load.style.display = 'block'
     setTimeout(function() {
         load.style.display = 'none'
@@ -254,15 +260,18 @@ tabElements.forEach(function(tab, index) {
 
 var file = [{
         name: 'Linktree x Daniel Triendl',
-        link: 'theme1.png'
+        link: 'theme1.png',
+        bg: 'bgtheme1.png'
     },
     {
         name: 'Linktree x Luke John Matthew Arnold',
-        link: 'theme2.png'
+        link: 'theme2.png',
+        bg: 'bgtheme2.png'
     },
     {
         name: 'Leaf',
-        link: 'theme3.png'
+        link: 'theme3.png',
+        bg: 'bgtheme1.png'
     },
     {
         name: 'Snow',
@@ -300,11 +309,117 @@ var file = [{
 var path = "./img/theme/"
 file.forEach(function(result, index) {
     var image = path + result.link
-    console.log(image)
     $('.theme__list').append(`
         <div class="theme__item">
-        <div class="theme__image" style="background-image: url(${image})"></div>    
+        <div class="theme__image" onclick="bg(this, '${result.bg}')" style="background-image: url(${image})"></div>    
         <span class="theme__name">${result.name}</span>
         </div>
     `)
 })
+
+
+function bg(element, bg) {
+    var bgactive = document.querySelector('.theme__image.active')
+    load.style.display = 'block'
+    if (bgactive) {
+        bgactive.classList.remove('active')
+    }
+    element.classList.add("active")
+    setTimeout(function() {
+        load.style.display = 'none'
+
+        var bgPhoneElement = document.querySelector('.phone')
+        bgPhoneElement.style.backgroundImage = `url(./img/theme/${bg})`
+
+    }, 1000)
+}
+
+
+var subTitleElement = document.querySelector('.info__title-text')
+var inputtileElement = document.querySelector('.infor__title-input')
+var infoElement = document.querySelector('.info__description')
+var textAreaElement = document.querySelector('.info__description-input')
+var totalElement = document.querySelector('.info__description-total')
+var descriptionElement = document.querySelector('.phone__user-des')
+if (nameTile != null) {
+    subTitleElement.classList.add('active')
+    inputtileElement.value = nameTile
+}
+
+$(".infor__title-input").focusin(function() {
+    this.placeholder = "@" + name;
+    subTitleElement.classList.add('active')
+});
+
+$(".infor__title-input").focusout(function() {
+    var _this = this
+    if (this.value.trim().length > 0) {
+        localStorage.setItem("NAME", JSON.stringify(this.value.trim()))
+        load.style.display = 'block'
+        setTimeout(function() {
+            load.style.display = 'none'
+
+            phoneNameElement.innerHTML = _this.value.trim()
+
+        }, 1000)
+    } else {
+        localStorage.setItem("NAME", JSON.stringify(null))
+        subTitleElement.classList.remove('active')
+        _this.placeholder = "";
+        load.style.display = 'block'
+        setTimeout(function() {
+            load.style.display = 'none'
+            phoneNameElement.innerHTML = "@" + name
+        }, 1000)
+    }
+});
+
+
+if (description != null) {
+    descriptionElement.innerHTML = description
+    textAreaElement.value = description
+}
+
+$(".info__description-input").focusout(function() {
+    var _this = this
+    if (this.value.trim().length <= 80) {
+        localStorage.setItem("DESCRIPTION", JSON.stringify(this.value.trim()))
+        load.style.display = 'block'
+        setTimeout(function() {
+            load.style.display = 'none'
+            descriptionElement.innerHTML = _this.value.trim()
+
+        }, 1000)
+
+    }
+})
+
+
+textAreaElement.oninput = function(e) {
+    this.onkeydown = function(e) {
+        var input = e.target;
+        var val = input.value;
+        var end = input.selectionEnd;
+        if (e.keyCode == 32 && (val[end - 1] == " " || val[end] == " ")) {
+            e.preventDefault();
+            return false;
+        }
+    };
+
+
+    var curent = e.target.value.length
+    totalElement.innerHTML = curent + "/80"
+    if (curent > 80) {
+        infoElement.classList.add('error')
+    } else {
+        infoElement.classList.remove('error')
+
+    }
+}
+
+
+
+// inputtileElement. = function() {
+//     var subTitleElement = document.querySelector('.info__title-text')
+//     subTitleElement.classList.add('active')
+// }
